@@ -1,4 +1,4 @@
-FROM shinobicctv/shinobi
+FROM shinobicctv/shinobi:dev
 LABEL org.freenas.interactive="false"                                   \
       org.freenas.version="latest"                                           \
       org.freenas.upgradeable="false"                                    \
