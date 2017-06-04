@@ -1,4 +1,4 @@
-FROM cbrherms/shinobi:dev
+FROM cbrherms/shinobi:latest
 LABEL org.freenas.interactive="false"                                   \
       org.freenas.version="latest"                                           \
       org.freenas.upgradeable="false"                                    \
@@ -18,7 +18,7 @@ LABEL org.freenas.interactive="false"                                   \
           {                                                             \
               \"env\": \"MYSQL_HOST\",                                          \
               \"descr\": \"IP or name of MySQL server\",               \
-              \"optional\": true                                        \
+              \"optional\": false                                        \
           },                                                            \
           {                                                             \
               \"env\": \"MYSQL_DATABASE\",                                        \
@@ -33,7 +33,7 @@ LABEL org.freenas.interactive="false"                                   \
           {                                                             \
               \"env\": \"MYSQL_ROOT_PASSWORD\",                                          \
               \"descr\": \"MySQL root password\",               \
-              \"optional\": true                                        \
+              \"optional\": false                                        \
           },                                                            \
           {                                                             \
               \"env\": \"MYSQL_USER\",                                        \
@@ -43,6 +43,11 @@ LABEL org.freenas.interactive="false"                                   \
           {                                                             \
               \"env\": \"MYSQL_PASSWORD\",                                        \
               \"descr\": \"Database user password\",                                    \
+              \"optional\": true                                        \
+         },                                                              \
+          {                                                             \
+              \"env\": \"TIMEZONE\",                                        \
+              \"descr\": \"Timezone - eg Europe/London\",                                    \
               \"optional\": true                                        \
          }                                                              \
       ]"
