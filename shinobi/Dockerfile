@@ -7,18 +7,22 @@ LABEL org.freenas.interactive="false"                                   \
       org.freenas.web-ui-protocol="http"                                \
       org.freenas.web-ui-port="8080"                                    \
       org.freenas.web-ui-path=""                                        \
-      org.freenas.port-mappings="8080:8080/tcp"                         \
+      org.freenas.port-mappings="8080:8080/tcp,3306:3306/tcp"                         \
       org.freenas.volumes="[                                            \
           {                                                             \
               \"name\": \"/opt/shinobi/videos\",                                    \
               \"descr\": \"Video storage location\"                       \
+          },                                                             \
+          {                                                             \
+              \"name\": \"/var/lib/mysql\",                                    \
+              \"descr\": \"MySQL database location\"                       \
           }                                                             \
       ]"                                                                \
       org.freenas.settings="[                                           \
           {                                                             \
               \"env\": \"MYSQL_HOST\",                                          \
               \"descr\": \"IP or name of MySQL server\",               \
-              \"optional\": false                                        \
+              \"optional\": true                                        \
           },                                                            \
           {                                                             \
               \"env\": \"MYSQL_DATABASE\",                                        \
@@ -33,7 +37,7 @@ LABEL org.freenas.interactive="false"                                   \
           {                                                             \
               \"env\": \"MYSQL_ROOT_PASSWORD\",                                          \
               \"descr\": \"MySQL root password\",               \
-              \"optional\": false                                        \
+              \"optional\": true                                        \
           },                                                            \
           {                                                             \
               \"env\": \"MYSQL_USER\",                                        \
